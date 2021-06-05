@@ -21,19 +21,18 @@ License
     You should have received a copy of the GNU General Public License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
-Application
+Application:
     DNSpimpleFOAM (OF6)
 
-Author
+Author:
 Kai Zhang @ KTH Royal Institute of Technology, Sweden
 
-Contact
+Contact:
 Kai.Zhang.1@city.ac.uk
 kaizhang@kth.se
 
-Description
-
-Solver for channel flow simulation with passive scalar @ https://github.com/WWIIWWIIWW
+Description:
+Solver for channel flow simulation without passive scalar @ https://github.com/WWIIWWIIWW
 solver formation following structure in pimpleTKEBudgetFoam @ https://github.com/AndreaDesan
 \*---------------------------------------------------------------------------*/
 
@@ -109,7 +108,6 @@ int main(int argc, char *argv[])
             }
 
             #include "UEqn.H"
-            #include "TEqn.H"
 
             // --- Pressure corrector loop
             while (pimple.correct())
@@ -125,12 +123,14 @@ int main(int argc, char *argv[])
         }
 
         #include "budgets.H"
-        UT = U * T;
+
         runTime.write();
 
-        Info<< "Ubulk = " << Uavg.value() << "m/s" << endl;
-        Info<< "min/max(T) = "
-            << min(T).value() << ", " << max(T).value() << endl;
+        if (runTime.outputTime())
+        {
+            #include "write.H"
+        }
+
         Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
             << "  ClockTime = " << runTime.elapsedClockTime() << " s"
             << nl << endl;
