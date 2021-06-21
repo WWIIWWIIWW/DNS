@@ -98,12 +98,12 @@ if (U.db().foundObject<volVectorField>("UMean") * U.db().foundObject<volScalarFi
     UVMVD_homo    =       nu_ *  UPrimeUPrime.component(tensor::XY);
 
     viscDiff_T_homo = 0.5 * DT * (TPrime * TPrime);
-    UTMVD_homo    = nu_ * (UPrime.component(vector::X) * gradTPrime) 
-                  + DT  * (TPrime * (fvc::grad(UPrime.component(vector::X))));
-    VTMVD_homo    = nu_ * (UPrime.component(vector::Y) * gradTPrime) 
-                  + DT  * (TPrime * (fvc::grad(UPrime.component(vector::Y))));
-    WTMVD_homo    = nu_ * (UPrime.component(vector::Z) * gradTPrime) 
-                  + DT  * (TPrime * (fvc::grad(UPrime.component(vector::Z))));
+    UTMVD_homo    = DT * (UPrime.component(vector::X) * gradTPrime) 
+                  + nu_ * (TPrime * (fvc::grad(UPrime.component(vector::X))));
+    VTMVD_homo    = DT * (UPrime.component(vector::Y) * gradTPrime) 
+                  + nu_ * (TPrime * (fvc::grad(UPrime.component(vector::Y))));
+    WTMVD_homo    = DT * (UPrime.component(vector::Z) * gradTPrime) 
+                  + nu_ * (TPrime * (fvc::grad(UPrime.component(vector::Z))));
 
     //Instantaneous resolved tke	    
     kres_ = 0.5*(UPrime & UPrime);
