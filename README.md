@@ -7,7 +7,7 @@ Example:
 <img src="https://github.com/WWIIWWIIWW/DNS/blob/main/pic/example_Channel.PNG" width="500">
 
 ## Author
-[Kai Zhang, KTH, Royal Institute of Technology, Sweden](https://www.https://scholar.google.com/citations?user=lfUyemMAAAAJ&hl=en) - Google Scholar
+[Kai Zhang, KTH, Royal Institute of Technology, Sweden](https://scholar.google.com/citations?user=lfUyemMAAAAJ&hl=en) - Google Scholar
 
 Email: kaizhang@kth.se; kai.zhang.1@city.ac.uk
 
