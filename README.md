@@ -2,7 +2,7 @@
 
 DNS solvers and utilities compatible with OF6 with incompressible budget terms
 
-Example:
+Example: (testing cases will be released once ready)
 
 <img src="https://github.com/WWIIWWIIWW/DNS/blob/main/pic/example_Channel.PNG" width="500">
 
@@ -10,6 +10,8 @@ Example:
 [Kai Zhang, KTH, Royal Institute of Technology, Sweden](https://www.https://scholar.google.com/citations?user=lfUyemMAAAAJ&hl=en) - Google Scholar
 
 Email: kaizhang@kth.se; kai.zhang.1@city.ac.uk
+
+paper doi: https://doi.org/10.1016/j.ijheatmasstransfer.2021.121946
 
 ## Solver (correct me if any equations are wrong!)
 DNSpimpleFOAM_withPassiveScalar: DNS solver based on pimpleFoam with added passive scalar transportation.
